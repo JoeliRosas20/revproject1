@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link type="text/css" rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+	function validate() {
+		var uname = document.getElementById("username").value;
+		var pwd = document.getElementById("password").value;
+		var errUn = document.getElementById("errUserName");
+		var errPwd= document.getElementById("errPassword");
+		errUn.innerHTML ="";
+		errPwd.innerHTML ="";
+		if (uname.length == 0) {
+			errUn.innerHTML = "<font color=lime>Please enter username</font>"
+			return false;
+		} else if (pwd.length == 0) {
+			errPwd.innerHTML =  "<font color=lime>Please enter password</font>"
+			return false;
+		}
+		else if (pwd.length < 6 || pwd.length > 12) {
+			errPwd.innerHTML =  "<font color=lime>Password length must be between 6-12</font>";
+			return false;
+		}
+		else {
+			alert("Welcome :" + uname);
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<hr />
+	<h2 class="notes">Hello Login Page</h2>
+	<form class="form-style" 
+	action="LoginController" 
+	onsubmit="return validate()"
+	method="post">
+		<table>
+			<tr>
+				<td><label> Username: </label></td>
+				<td><input type="text" size="31" name="username" id="username" placeholder="please enter username">
+				<span id="errUserName"></span></td>
+			</tr>
+			<tr>
+				<td><label> Password: </label></td>
+				<td><input type="password" name="password" id="password">
+				<span id="errPassword"></span>
+					<input type="submit" value="Sign in"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

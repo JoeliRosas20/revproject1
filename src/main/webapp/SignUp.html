@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<script type="text/javascript">
+	function validateSignUpForm() {
+		var uname1 = document.getElementById("username").value;
+		var uname2 = document.signupform.username.value;
+		var pwd = document.forms[0].elements[1].value;
+		var confirmpwd = document.forms[0].elements[2].value;
+
+		var checked1 = document.getElementById('email').checked
+		var checked2 = document.getElementById('sms').checked
+		var checked3 = document.getElementById('courier').checked
+
+		var qual = document.signupform.qualification.options.selectedIndex;
+
+		/* 		var radio1 = document.getElementById('radio1').checked;
+		 var radio2 = document.getElementById('radio2').checked;
+		 var radio3 = document.getElementById('radio3').checked; */
+
+		var radio = new Array();
+		for (i = 3; i <= 5; i++) {
+			radio[i] = document.forms[0].elements[i].checked
+		}
+
+		if (uname1.length == 0) {
+			alert("Please enter username");
+			return false;
+		} else if (pwd.length == 0) {
+			alert("Please enter password");
+			return false;
+		} else if (pwd != confirmpwd) {
+			alert("Password and confirm password does not match");
+			return false;
+		} else if (radio[0] == 0 && radio[1] == 0 && radio[2] == 0) {
+			alert("Please select a gender");
+			return false;
+		} else if (!checked1 && !checked2 && !checked3) {
+			alert("Please Pick a Notification");
+			return false;
+		} else if (qual == 0) {
+			alert("Please select a qualification");
+			return false;
+		}
+
+	}
+
+	function addInput() {
+		var mainDiv = document.getElementById('myDiv1');
+		var marriedButton = document.getElementById('marriedButton');
+
+		var newTextBox = document.createElement('input');
+		newTextBox.type = 'text';
+		newTextBox.setAttribute('id', 'spousename');
+
+		marriedButton.innerText ="Spouse Name : "
+		mainDiv.append(newTextBox);
+
+	}
+</script>
+<body>
+	<form class="form-style" 
+	action="SignUpController"
+	method="get"
+	onsubmit="return validateSignUpForm()" 
+	name="signupform">
+		<table cellspacing="20" cellpadding="20" bgcolor="cyan">
+			<tr>
+				<td><label>* Username: </label></td>
+				<td><input type="text" name="username" id="username"></td>
+			</tr>
+			<tr>
+				<td><label>* Password: </label></td>
+				<td><input type="password" name="password" id="password">
+			</tr>
+			<tr>
+				<td><label>* Confirm Password: </label></td>
+				<td><input type="password" name="confirmpassword"
+					id="confirmpassword"></td>
+			</tr>
+			<tr>
+				<td><label> Gender: </label></td>
+				<td><input type="radio" name="gender" value="male" id="radio1">Male
+					<input type="radio" name="gender" value="female" id="radio2">Female
+					<input type="radio" name="gender" value="others" id="radio3">Others</td>
+			</tr>
+
+			<tr>
+				<td><label> Notifications: </label></td>
+				<td><input type="checkbox" name="notification" value="email"
+					id="email">Email <input type="checkbox" name="notification"
+					value="sms" id="sms">SMS <input type="checkbox"
+					name="notification" value="courier" id="courier">Courier</td>
+			</tr>
+
+			<tr>
+				<td><label> Qualification: </label></td>
+				<td><select name="qualification" id="qualification">
+						<option>--select --</option>
+						<option>Graduate</option>
+						<option>PostGraduate</option>
+						<option>Masters</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><span id="marriedButton"> 
+				<input type="button"
+						value="Married ?" onClick="addInput()">
+				</span></td>
+				<td><div id="myDiv1"></div></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="SignUp"></td>
+				<td><input type="reset" value="Clear"></td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>
