@@ -23,7 +23,6 @@ public class SignUpController extends HttpServlet {
      */
     public SignUpController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

@@ -32,7 +32,6 @@ public class LoginDAOImpl implements LoginDAO{
 			System.out.println(rows + " inserted successfully");
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if (rows == 0)
