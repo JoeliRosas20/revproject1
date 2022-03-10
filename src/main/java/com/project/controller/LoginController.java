@@ -51,6 +51,8 @@ public class LoginController extends HttpServlet {
 			out.println("Welcome : " +uname+", <br/>");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Welcome.jsp");
 			dispatcher.include(request, response);
+			out.println("<br/>");
+			out.println("<a href=login.html>Logout</a>");
 		}
 		else {
 			out.println("That account does not exist. Go <a href=SignUp.html>Sign Up<a/>");
