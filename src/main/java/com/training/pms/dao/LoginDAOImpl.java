@@ -28,7 +28,7 @@ public class LoginDAOImpl implements LoginDAO{
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getPassword());
 			statement.setString(3, user.getGender());
-			statement.setString(4, user.getNotification());
+			statement.setString(4, user.getStatus());
 			statement.setString(5, user.getQualification());
 
 			rows = statement.executeUpdate();
@@ -76,7 +76,7 @@ public class LoginDAOImpl implements LoginDAO{
 				user.setPassword(res.getString(3));
 				user.setGender(res.getString(4));
 				user.setQualification(res.getString(5));
-				user.setNotification(res.getString(6));
+				user.setStatus(res.getString(6));
 				users.add(user);
 			}
 		}catch(SQLException e) {
@@ -100,7 +100,7 @@ public class LoginDAOImpl implements LoginDAO{
 				user.setUsername(res.getString(2));
 				user.setPassword(res.getString(3));
 				user.setGender(res.getString(4));
-				user.setNotification(res.getString(5));
+				user.setStatus(res.getString(5));
 				user.setQualification(res.getString(6));
 				users.add(user);
 

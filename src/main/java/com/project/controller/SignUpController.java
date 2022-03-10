@@ -32,13 +32,9 @@ public class SignUpController extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String gender = request.getParameter("gender");
-		String notification[] = request.getParameterValues("notification");
+		String status = request.getParameter("status");
 		String qualification = request.getParameter("qualification");
-		String finalNotification="";
-		for(String temp : notification) {
-			finalNotification += temp + ":";
-		}
-		User user = new User(-1, username, password, gender, finalNotification, qualification);
+		User user = new User(-1, username, password, gender, status, qualification);
 		LoginDAO loginDAO = new LoginDAOImpl();
 		loginDAO.register(user);
 		PrintWriter out = response.getWriter();

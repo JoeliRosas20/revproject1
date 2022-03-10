@@ -21,7 +21,7 @@ class LoginDAOImplTest {
 	String username;
 	String password;
 	String gender;
-	String finalNotification;
+	String status;
 	String qualification;
 	int userId;
 
@@ -38,9 +38,9 @@ class LoginDAOImplTest {
 		username = "dummy";
 		password = "dummyroot123";
 		gender = "male";
-		finalNotification = "sms";
+		status = "employee";
 		qualification = "graduate";
-		user = new User(-1, username, password, gender, finalNotification, qualification);
+		user = new User(-1, username, password, gender, status, qualification);
 	}
 
 	@AfterEach

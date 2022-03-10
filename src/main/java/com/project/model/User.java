@@ -6,21 +6,21 @@ public class User {
 	private String username;
 	private String password;
 	private String gender;
-	private String notification;
+	private String status;
 	private String qualification;
 	
 	public User() {
 		super();
 	}
 
-	public User(int userId, String username, String password, String gender, String notification,
+	public User(int userId, String username, String password, String gender, String status,
 			String qualification) {
 		super();
 		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.gender = gender;
-		this.notification = notification;
+		this.status = status;
 		this.qualification = qualification;
 	}
 
@@ -56,12 +56,12 @@ public class User {
 		this.gender = gender;
 	}
 
-	public String getNotification() {
-		return notification;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setNotification(String notification) {
-		this.notification = notification;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getQualification() {
@@ -77,7 +77,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result + ((notification == null) ? 0 : notification.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((qualification == null) ? 0 : qualification.hashCode());
 		result = prime * result + userId;
@@ -99,10 +99,10 @@ public class User {
 				return false;
 		} else if (!gender.equals(other.gender))
 			return false;
-		if (notification == null) {
-			if (other.notification != null)
+		if (status == null) {
+			if (other.status != null)
 				return false;
-		} else if (!notification.equals(other.notification))
+		} else if (!status.equals(other.status))
 			return false;
 		if (password == null) {
 			if (other.password != null)
@@ -127,7 +127,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", gender=" + gender
-				+ ", notification=" + notification + ", qualification=" + qualification + "]";
+				+ ", status=" + status + ", qualification=" + qualification + "]";
 	}
 	
 }
