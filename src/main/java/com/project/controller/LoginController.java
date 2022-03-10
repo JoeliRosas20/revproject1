@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.training.pms.dao.LoginDAO;
 import com.training.pms.dao.LoginDAOImpl;
-
+//TODO Design the employee jsp and manager jsp
 /**
  * Servlet implementation class LoginController
  */
