@@ -8,12 +8,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.project.ers.utility.DBConnection;
 import com.project.model.User;
 
 public class LoginDAOImpl implements LoginDAO{
 
 	Connection connection = DBConnection.getConnection();
+	private static Logger logger = Logger.getLogger(LoginDAOImpl.class);
 
 	@Override
 	public boolean register(User user) {
@@ -50,6 +53,9 @@ public class LoginDAOImpl implements LoginDAO{
 			stat.setString(2, password);
 			ResultSet res = stat.executeQuery();
 			userValid = res.next();
+			System.out.println("Inside validate");
+			logger.info(username+" has logged on at: "+new java.util.Date());
+	        System.out.println("Leaving");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
