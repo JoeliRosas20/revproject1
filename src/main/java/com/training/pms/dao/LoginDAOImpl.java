@@ -111,4 +111,16 @@ public class LoginDAOImpl implements LoginDAO{
 		return users;
 	}
 
+	@Override
+	public String getUserStatus(String username) {
+		String status = " ";
+		PreparedStatement statement;
+		try {
+			statement = connection.prepareStatement("select status from users where username = ?");
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
 }

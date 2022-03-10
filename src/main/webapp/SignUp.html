@@ -39,8 +39,8 @@
 		} else if (radio[0] == 0 && radio[1] == 0 && radio[2] == 0) {
 			alert("Please select a gender");
 			return false;
-		} else if (!checked1 && !checked2 && !checked3) {
-			alert("Please Pick a Notification");
+		} else if (radio[0] == 0 && radio[1] == 0) {
+			alert("Please Pick one");
 			return false;
 		} else if (qual == 0) {
 			alert("Please select a qualification");
@@ -90,11 +90,9 @@
 			</tr>
 
 			<tr>
-				<td><label> Notifications: </label></td>
-				<td><input type="checkbox" name="notification" value="email"
-					id="email">Email <input type="checkbox" name="notification"
-					value="sms" id="sms">SMS <input type="checkbox"
-					name="notification" value="courier" id="courier">Courier</td>
+				<td><label> Employee or Manager: </label></td>
+				<td><input type="radio" name="status" value="employee"id="employee">Employee 
+					<input type="radio" name="status" value="manager" id="manager">Manager</td>
 			</tr>
 
 			<tr>

@@ -24,4 +24,5 @@ public interface LoginDAO {
 	//Manager can deny request
 	//HELPER
 	//Get username to see whether its an employee or manager
+	public String getUserStatus(String username);
 }
