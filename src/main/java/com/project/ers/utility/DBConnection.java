@@ -13,7 +13,7 @@ public class DBConnection {
 	public static Connection getConnection() {
 		Connection con = null;
 		try {
-			FileReader rdr = new FileReader("H://mydb.properties");
+			FileReader rdr = new FileReader("H://mydbaws.properties");
 			Properties properties = new Properties();
 			properties.load(rdr);
 			String driver = properties.getProperty("driver");
