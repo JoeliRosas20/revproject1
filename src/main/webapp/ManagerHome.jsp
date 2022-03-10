@@ -7,6 +7,10 @@
 <title>Manager Home</title>
 </head>
 <body>
-
+	<h1>Approve/Deny Reimbursement request</h1>
+	<h1>View all pending Reimbursement request</h1>
+	<h1>View all resolved Reimbursement request</h1>
+	<h1>View Reimbursement request of an employee</h1>
+	<h1>View all employees</h1>
 </body>
 </html>
