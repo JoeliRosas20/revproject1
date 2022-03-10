@@ -22,6 +22,18 @@
   	<description></description>
   	<servlet-class>com.project.controller.LoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmployeeHomeController</servlet-name>
+  	<display-name>EmployeeHomeController</display-name>
+  	<description></description>
+  	<servlet-class>com.project.controller.EmployeeHomeController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerHomeController</servlet-name>
+  	<display-name>ManagerHomeController</display-name>
+  	<description></description>
+  	<servlet-class>com.project.controller.ManagerHomeController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>HomeController</servlet-name>
   	<url-pattern>/HomeController</url-pattern>
@@ -45,5 +57,29 @@
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeHomeController</servlet-name>
+  	<url-pattern>/EmployeeHomeController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeHomeController</servlet-name>
+  	<url-pattern>/Employee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeHomeController</servlet-name>
+  	<url-pattern>/EmployeeHome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerHomeController</servlet-name>
+  	<url-pattern>/ManagerHomeController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerHomeController</servlet-name>
+  	<url-pattern>/ManagerHome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerHomeController</servlet-name>
+  	<url-pattern>/Manager</url-pattern>
   </servlet-mapping>
 </web-app>
