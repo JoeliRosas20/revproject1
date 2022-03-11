@@ -75,8 +75,8 @@ public class LoginDAOImpl implements LoginDAO{
 				user.setUsername(res.getString(2));
 				user.setPassword(res.getString(3));
 				user.setGender(res.getString(4));
-				user.setQualification(res.getString(5));
-				user.setStatus(res.getString(6));
+				user.setStatus(res.getString(5));
+				user.setQualification(res.getString(6));
 				users.add(user);
 			}
 		}catch(SQLException e) {

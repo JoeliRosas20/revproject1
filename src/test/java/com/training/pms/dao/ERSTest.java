@@ -6,12 +6,14 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -46,12 +48,27 @@ class ERSTest {
 	void tearDown() throws Exception {
 	}
 	
+	@Disabled
 	@Test
-	void test() {
+	void testLogin() {
 		driver.get("http://localhost:8080/alstram-ers-revature/login.html");
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("bobby");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
 		driver.findElement(By.id("btnsubmit")).click();
+		//assertTrue(driver.findElement(By.id("inventory_container")).isDisplayed());
+	}
+	
+	@Test
+	void testSignup() {
+		driver.get("http://localhost:8080/alstram-ers-revature/SignUp.html");
+		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("bobby");
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
+		driver.findElement(By.xpath("//*[@id=\"confirmpassword\"]")).sendKeys("12345678");
+		driver.findElement(By.id("radio1")).click();
+		driver.findElement(By.id("employee")).click();
+		Select qual = new Select(driver.findElement(By.id("qualification")));
+		qual.selectByVisibleText("Graduate");
+		driver.findElement(By.id("submit")).click();
 		//assertTrue(driver.findElement(By.id("inventory_container")).isDisplayed());
 	}
 
