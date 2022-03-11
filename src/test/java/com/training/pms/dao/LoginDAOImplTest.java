@@ -35,11 +35,11 @@ class LoginDAOImplTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		username = "dummy";
-		password = "dummyroot123";
+		username = "bobby";
+		password = "12345678";
 		gender = "male";
 		status = "employee";
-		qualification = "graduate";
+		qualification = "Graduate";
 		user = new User(-1, username, password, gender, status, qualification);
 	}
 
@@ -54,7 +54,7 @@ class LoginDAOImplTest {
 		assertTrue(loginDAO.register(user));
 	}
 	
-	//@Disabled
+	@Disabled
 	@Test
 	@DisplayName("Testing login")
 	void testValidate() {
@@ -75,6 +75,15 @@ class LoginDAOImplTest {
 	void testGetUsersByUserName() {
 		List<User> users = loginDAO.getUsersByUserName(username);
 		assertNotEquals(0, users.size());
+	}
+	
+	//@Disabled
+	@Test
+	@DisplayName("Testing getting users status")
+	void testGetUserStatus() {
+		String employee = "employee";
+		String result = loginDAO.getUserStatus(username);
+		assertEquals(employee, result);
 	}
 
 }

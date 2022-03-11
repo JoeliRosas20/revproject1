@@ -117,6 +117,10 @@ public class LoginDAOImpl implements LoginDAO{
 		PreparedStatement statement;
 		try {
 			statement = connection.prepareStatement("select status from users where username = ?");
+			statement.setString(1, username);
+			ResultSet res = statement.executeQuery();
+			res.next();
+			status = res.getString(1);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}

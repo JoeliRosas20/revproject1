@@ -49,14 +49,22 @@ public class LoginController extends HttpServlet {
 		if(result) {
 			session.setAttribute("message", "Valid User");
 			out.println("Welcome : " +uname+", <br/>");
+			/*
 			String status = loginDAO.getUserStatus(uname);
 			if(status.equals("Employee")) {
-				
+				System.out.println("Employee");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeHome.jsp");
+				dispatcher.include(request, response);
 			}else if(status.equals("Manager")) {
-				
+				System.out.println("Manager");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("ManagerHome.jsp");
+				dispatcher.include(request, response);
 			}
+			*/
+			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Welcome.jsp");
 			dispatcher.include(request, response);
+		
 			out.println("<br/>");
 			out.println("<a href=login.html>Logout</a>");
 		}

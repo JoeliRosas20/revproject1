@@ -48,16 +48,17 @@ class ERSTest {
 	void tearDown() throws Exception {
 	}
 	
-	@Disabled
+	//@Disabled
 	@Test
 	void testLogin() {
 		driver.get("http://localhost:8080/alstram-ers-revature/login.html");
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("bobby");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
-		driver.findElement(By.id("btnsubmit")).click();
+		driver.findElement(By.id("login")).click();
 		//assertTrue(driver.findElement(By.id("inventory_container")).isDisplayed());
 	}
 	
+	@Disabled
 	@Test
 	void testSignup() {
 		driver.get("http://localhost:8080/alstram-ers-revature/SignUp.html");
