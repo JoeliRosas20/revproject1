@@ -7,10 +7,11 @@
 <title>Manager Home</title>
 </head>
 <body>
-	<h1>Approve/Deny Reimbursement request</h1>
-	<h1>View all pending Reimbursement request</h1>
-	<h1>View all resolved Reimbursement request</h1>
-	<h1>View Reimbursement request of an employee</h1>
-	<h1>View all employees</h1>
+	<h1>Manager</h1>
+	<h2>Approve/Deny Reimbursement request</h2>
+	<h2>View all pending Reimbursement request</h2>
+	<h2>View all resolved Reimbursement request</h2>
+	<h2>View Reimbursement request of an employee</h2>
+	<h2 id="viewAll"><a href="DisplayUserDetails.jsp">View all employees</a></h2>
 </body>
 </html>

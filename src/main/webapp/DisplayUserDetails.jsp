@@ -26,7 +26,7 @@
 	<th>User Name</th>
 	<th>Password</th>
 	<th>Gender</th>
-	<th>Notification</th>
+	<th>Status</th>
 	<th>Qualification</th>
 <% 
 	while(iterator.hasNext()){
@@ -37,7 +37,7 @@
 		<td><%= user.getUsername() %></td>
 		<td><%= user.getPassword() %></td>
 		<td><%= user.getGender() %></td>
-		<td><%= user.getNotification() %></td>
+		<td><%= user.getStatus() %></td>
 		<td><%= user.getQualification() %></td>
 	</tr>
 <% 

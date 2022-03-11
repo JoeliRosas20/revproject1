@@ -7,10 +7,11 @@
 <title>Employee Page</title>
 </head>
 <body>
-	<h1>Submit a Reimbursement Request</h1>
-	<h1>View Pending Reimbursement Request</h1>
-	<h1>View Resolved Reimbursement Request</h1>
-	<h1>View Info</h1>
-	<h1>Update Info</h1>
+	<h1>Employee</h1>
+	<h2>Submit a Reimbursement Request</h2>
+	<h2>View Pending Reimbursement Request</h2>
+	<h2>View Resolved Reimbursement Request</h2>
+	<h2>View Info</h2>
+	<h2>Update Info</h2>
 </body>
 </html>

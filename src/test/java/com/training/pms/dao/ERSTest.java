@@ -21,6 +21,8 @@ class ERSTest {
 	
 	static String browserName = "chrome";
 	static WebDriver driver;
+	String username;
+	String password;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -42,6 +44,8 @@ class ERSTest {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
+		username = "Raymond";
+		password = "12345678";
 	}
 
 	@AfterEach
@@ -52,9 +56,10 @@ class ERSTest {
 	@Test
 	void testLogin() {
 		driver.get("http://localhost:8080/alstram-ers-revature/login.html");
-		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("bobby");
-		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
+		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(username);
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
 		driver.findElement(By.id("login")).click();
+		driver.findElement(By.xpath("//*[@id=\"viewAll\"]/a")).click();
 		//assertTrue(driver.findElement(By.id("inventory_container")).isDisplayed());
 	}
 	
@@ -62,11 +67,11 @@ class ERSTest {
 	@Test
 	void testSignup() {
 		driver.get("http://localhost:8080/alstram-ers-revature/SignUp.html");
-		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("bobby");
-		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("12345678");
-		driver.findElement(By.xpath("//*[@id=\"confirmpassword\"]")).sendKeys("12345678");
+		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(username);
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
+		driver.findElement(By.xpath("//*[@id=\"confirmpassword\"]")).sendKeys(password);
 		driver.findElement(By.id("radio1")).click();
-		driver.findElement(By.id("employee")).click();
+		driver.findElement(By.id("manager")).click();
 		Select qual = new Select(driver.findElement(By.id("qualification")));
 		qual.selectByVisibleText("Graduate");
 		driver.findElement(By.id("submit")).click();
