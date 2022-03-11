@@ -59,6 +59,24 @@ public class LoginDAOImpl implements LoginDAO{
 		}
 		return userValid;
 	}
+	
+	public List<User> getPendingReimbursment(){
+		List<User> pending = new ArrayList<User>();
+		return pending;
+	}
+	
+	public List<User> getResolvedReimbursment(){
+		List<User> resolved = new ArrayList<User>();
+		return resolved;
+	}
+	
+	public boolean acceptRequest(int requestId){
+		return false;
+	}
+	
+	public boolean denyRequest(int requestId) {
+		return false;
+	}
 
 	@Override
 	public List<User> getUsers() {
