@@ -53,9 +53,7 @@ public class LoginDAOImpl implements LoginDAO{
 			stat.setString(2, password);
 			ResultSet res = stat.executeQuery();
 			userValid = res.next();
-			System.out.println("Inside validate");
 			logger.info(username+" has logged on at: "+new java.util.Date());
-	        System.out.println("Leaving");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -113,6 +111,7 @@ public class LoginDAOImpl implements LoginDAO{
 
 	@Override
 	public String getUserStatus(String username) {
+		System.out.println("Inside user status");
 		String status = " ";
 		PreparedStatement statement;
 		try {

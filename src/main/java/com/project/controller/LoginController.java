@@ -46,25 +46,26 @@ public class LoginController extends HttpServlet {
 		session.setAttribute("username", uname);
 		LoginDAO loginDAO = new LoginDAOImpl();
 		boolean result = loginDAO.validate(uname, pwd);
+		//RequestDispatcher dispatcher = null;
 		if(result) {
 			session.setAttribute("message", "Valid User");
 			out.println("Welcome : " +uname+", <br/>");
-			/*
 			String status = loginDAO.getUserStatus(uname);
-			if(status.equals("Employee")) {
-				System.out.println("Employee");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeHome.jsp");
-				dispatcher.include(request, response);
-			}else if(status.equals("Manager")) {
-				System.out.println("Manager");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("ManagerHome.jsp");
-				dispatcher.include(request, response);
+			System.out.println("I'm going in");
+			if(status.equals("employee")) {
+				System.out.println("employee");
+				RequestDispatcher dispatcher1 = request.getRequestDispatcher("EmployeeHome.jsp");
+				dispatcher1.include(request, response);
+			}else if(status.equals("manager")) {
+				System.out.println("manager");
+				RequestDispatcher dispatcher2 = request.getRequestDispatcher("ManagerHome.jsp");
+				dispatcher2.include(request, response);
 			}
-			*/
-			
+			System.out.println("See ya");
+			/*
 			RequestDispatcher dispatcher = request.getRequestDispatcher("Welcome.jsp");
 			dispatcher.include(request, response);
-		
+			*/
 			out.println("<br/>");
 			out.println("<a href=login.html>Logout</a>");
 		}
