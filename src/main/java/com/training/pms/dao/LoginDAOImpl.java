@@ -62,6 +62,16 @@ public class LoginDAOImpl implements LoginDAO{
 	
 	public List<User> getPendingReimbursment(){
 		List<User> pending = new ArrayList<User>();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending");
+			while(res.next()) {
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		return pending;
 	}
 	
