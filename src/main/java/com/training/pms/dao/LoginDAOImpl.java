@@ -105,11 +105,16 @@ public class LoginDAOImpl implements LoginDAO{
 		PreparedStatement statement = null;
 		int rows = 0;
 		try {
-			statement = connection.prepareStatement("update Bank set balance = balance + ? where accountid = ? ");
+			statement = connection.prepareStatement("update Reimbursement set status = approved where requestid = ?");
+			statement.setInt(1, requestId);
+			rows = statement.executeUpdate();
 		}catch(SQLException e) {
-			
+			e.printStackTrace();
 		}
-		return false;
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 	
 	public boolean denyRequest(int requestId) {
