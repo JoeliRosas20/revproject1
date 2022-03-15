@@ -27,6 +27,6 @@ Feature: feature to sign up as an employee
     Then User is navigated to <status> 
 
     Examples: 
-      | name  | password  | status  |
-      | 'Roy' | '12345678'| success |
-      | 'Ace' | '12345'   | Fail    |
+      | name    | password  | status  |
+      | 'Janet' | '12345678'| success |
+      | 'Eddie' | '12345'   | Fail    |

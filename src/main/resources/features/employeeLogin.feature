@@ -21,7 +21,7 @@ Feature: feature to sign up as an employee
 
   Scenario Outline: Title of your scenario outline
     Given A new tab is open
-    And User is on the sign up page
+    And User is on the login page
     When User enters <name> and <password>
     And User clicks on login button of test project
     Then User is navigated to <status> 
