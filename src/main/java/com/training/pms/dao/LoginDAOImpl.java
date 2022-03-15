@@ -118,7 +118,19 @@ public class LoginDAOImpl implements LoginDAO{
 	}
 	
 	public boolean denyRequest(int requestId) {
-		return false;
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+			statement = connection.prepareStatement("update Reimbursement set status = denied where requestid = ?");
+			statement.setInt(1, requestId);
+			rows = statement.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 
 	@Override
