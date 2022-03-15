@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color:lightgreen;
+}
+@media only screen and (min-width: 600px) {
+
+   .username:before
+   {
+	content:"User Name :";
+   }
+    body	
+   {
+      background-color:lightblue;
+   }
+}
+@media only screen and (min-width: 780px) {
+
+   .username:before
+   {
+	content:"Please enter User Name :";
+   }
+    body	
+   {
+      background-color:pink;
+   }
+}
+@media only screen and (max-width: 500px) {
+
+   .username:before
+   {
+	content:":::";
+	
+   }
+   body	
+   {
+      background-color:lightblue;
+   }
+}
+</style>
+</head>
+<body>
+
+<p>Welcome to Tufail Ahmed's website</p>
+
+<div class="username">
+<input type="text">
+</div>
+</body>
+</html>
+
+
+
