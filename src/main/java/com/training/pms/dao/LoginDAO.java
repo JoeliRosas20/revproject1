@@ -2,6 +2,7 @@ package com.training.pms.dao;
 
 import java.util.List;
 
+import com.project.model.Reimbursement;
 import com.project.model.User;
 
 public interface LoginDAO {
@@ -10,8 +11,8 @@ public interface LoginDAO {
 	public boolean register(User user);
 	public boolean validate(String userId, String password);
 	// MANAGER STUFF
-	public List<User> getPendingReimbursment();
-	public List<User> getResolvedReimbursment();
+	public List<Reimbursement> getPendingReimbursment();
+	public List<Reimbursement> getResolvedReimbursment();
 	public boolean acceptRequest(int requestId);
 	public boolean denyRequest(int requestId);
 	public List<User> getUsers();

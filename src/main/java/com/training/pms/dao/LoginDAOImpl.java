@@ -11,6 +11,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.project.ers.utility.DBConnection;
+import com.project.model.Reimbursement;
 import com.project.model.User;
 
 public class LoginDAOImpl implements LoginDAO{
@@ -60,14 +61,19 @@ public class LoginDAOImpl implements LoginDAO{
 		return userValid;
 	}
 	
-	public List<User> getPendingReimbursment(){
-		List<User> pending = new ArrayList<User>();
+	public List<Reimbursement> getPendingReimbursment(){
+		List<Reimbursement> pending = new ArrayList<Reimbursement>();
 		Statement statement;
 		try {
 			statement = connection.createStatement();
 			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending");
 			while(res.next()) {
-				
+				Reimbursement reimb = new Reimbursement();
+				reimb.setEmployeeId(0);
+				reimb.setAmount(0);
+				reimb.setPurpose(null);
+				reimb.setPurpose(null);
+				pending.add(reimb);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -75,12 +81,34 @@ public class LoginDAOImpl implements LoginDAO{
 		return pending;
 	}
 	
-	public List<User> getResolvedReimbursment(){
-		List<User> resolved = new ArrayList<User>();
+	public List<Reimbursement> getResolvedReimbursment(){
+		List<Reimbursement> resolved = new ArrayList<Reimbursement>();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			ResultSet res = statement.executeQuery("select * from reimbursements where status = resolved");
+			while(res.next()) {
+				Reimbursement reimb = new Reimbursement();
+				reimb.setEmployeeId(0);
+				reimb.setAmount(0);
+				reimb.setPurpose(null);
+				reimb.setPurpose(null);
+				resolved.add(reimb);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		return resolved;
 	}
 	
 	public boolean acceptRequest(int requestId){
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+			statement = connection.prepareStatement("update Bank set balance = balance + ? where accountid = ? ");
+		}catch(SQLException e) {
+			
+		}
 		return false;
 	}
 	
