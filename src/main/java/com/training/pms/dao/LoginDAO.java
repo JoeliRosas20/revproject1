@@ -18,8 +18,8 @@ public interface LoginDAO {
 	public List<User> getUsers();
 	public List<User> getUsersByUserName(String username);
 	// EMPLOYEE STUFF
-	// Employee see their pending reimbursement
-	// Employee see their resolved reimbursement
+	public List<Reimbursement> getPendingReimbursment(int employeeId);
+	public List<Reimbursement> getResolvedReimbursment(int employeeId);
 	// Employee can see their info
 	// Employee can update their info
 	// HELPER

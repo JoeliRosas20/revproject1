@@ -19,6 +19,8 @@ public class LoginDAOImpl implements LoginDAO{
 	Connection connection = DBConnection.getConnection();
 	private static Logger logger = Logger.getLogger(LoginDAOImpl.class);
 
+	//---------------User Stuff---------------
+	
 	@Override
 	public boolean register(User user) {
 		System.out.println("Registration");
@@ -61,6 +63,8 @@ public class LoginDAOImpl implements LoginDAO{
 		return userValid;
 	}
 	
+	//---------------Manager Stuff---------------
+	
 	public List<Reimbursement> getPendingReimbursment(){
 		List<Reimbursement> pending = new ArrayList<Reimbursement>();
 		Statement statement;
@@ -92,7 +96,7 @@ public class LoginDAOImpl implements LoginDAO{
 				reimb.setEmployeeId(0);
 				reimb.setAmount(0);
 				reimb.setPurpose(null);
-				reimb.setPurpose(null);
+				reimb.setStatus(null);
 				resolved.add(reimb);
 			}
 		}catch(SQLException e) {
@@ -105,7 +109,7 @@ public class LoginDAOImpl implements LoginDAO{
 		PreparedStatement statement = null;
 		int rows = 0;
 		try {
-			statement = connection.prepareStatement("update Reimbursement set status = approved where requestid = ?");
+			statement = connection.prepareStatement("update Reimbursement set status = 'approved' where requestid = ?");
 			statement.setInt(1, requestId);
 			rows = statement.executeUpdate();
 		}catch(SQLException e) {
@@ -121,7 +125,7 @@ public class LoginDAOImpl implements LoginDAO{
 		PreparedStatement statement = null;
 		int rows = 0;
 		try {
-			statement = connection.prepareStatement("update Reimbursement set status = denied where requestid = ?");
+			statement = connection.prepareStatement("update Reimbursement set status = 'denied' where requestid = ?");
 			statement.setInt(1, requestId);
 			rows = statement.executeUpdate();
 		}catch(SQLException e) {
@@ -180,6 +184,48 @@ public class LoginDAOImpl implements LoginDAO{
 			e.printStackTrace();
 		}
 		return users;
+	}
+	
+	//---------------Employee Stuff---------------
+	
+	public List<Reimbursement> getPendingReimbursment(int employeeId){
+		List<Reimbursement> pending = new ArrayList<Reimbursement>();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending and employeeid="+employeeId);
+			while(res.next()) {
+				Reimbursement reimb = new Reimbursement();
+				reimb.setEmployeeId(res.getInt(1));
+				reimb.setAmount(res.getInt(2));
+				reimb.setPurpose(res.getString(3));
+				reimb.setStatus(res.getString(4));
+				pending.add(reimb);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return pending;
+	}
+	
+	public List<Reimbursement> getResolvedReimbursment(int employeeId){
+		List<Reimbursement> resolved = new ArrayList<Reimbursement>();
+		Statement statement;
+		try {
+			statement = connection.createStatement();
+			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending and employeeid="+employeeId);
+			while(res.next()) {
+				Reimbursement reimb = new Reimbursement();
+				reimb.setEmployeeId(res.getInt(1));
+				reimb.setAmount(res.getInt(2));
+				reimb.setPurpose(res.getString(3));
+				reimb.setStatus(res.getString(4));
+				resolved.add(reimb);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return resolved;
 	}
 
 	@Override
