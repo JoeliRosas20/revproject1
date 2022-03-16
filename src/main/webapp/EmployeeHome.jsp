@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h1>Employee</h1>
-	<h2><a href="SubmitReimbReq.jsp">Submit a Reimbursement Request</a></h2>
-	<h2>View Pending Reimbursement Request</h2>
-	<h2>View Resolved Reimbursement Request</h2>
-	<h2>View Info</h2>
-	<h2>Update Info</h2>
+	<h2 id="sumbitReimbReq"><a href="ESubmitReimbReq.jsp">Submit a Reimbursement Request</a></h2>
+	<h2 id="viewPendingReimb"><a href="EViewPendingReimb.jsp">View Pending Reimbursement Request</a></h2>
+	<h2 id="viewResolvedReimb"><a href="EViewResolvedRequest.jsp">View Resolved Reimbursement Request</a></h2>
+	<h2 id="viewInfo"><a href="EViewInfo.jsp">View Info</a></h2>
+	<h2 id="updateInfo"><a href="EUpdateInfo.jsp">Update Info</a></h2>
 </body>
 </html>
