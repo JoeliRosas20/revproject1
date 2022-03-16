@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Employee</h1>
-	<h2>Submit a Reimbursement Request</h2>
+	<h2><a href="SubmitReimbReq.jsp">Submit a Reimbursement Request</a></h2>
 	<h2>View Pending Reimbursement Request</h2>
 	<h2>View Resolved Reimbursement Request</h2>
 	<h2>View Info</h2>
