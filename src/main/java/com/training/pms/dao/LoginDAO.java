@@ -23,6 +23,5 @@ public interface LoginDAO {
 	// Employee can see their info
 	// Employee can update their info
 	// HELPER
-	// Get username to see whether its an employee or manager
 	public String getUserStatus(String username);
 }
