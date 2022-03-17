@@ -20,7 +20,6 @@ import com.training.pms.dao.LoginDAOImpl;
 //TODO 3 Add more cucumber files for reimbursements from both ends
 //TODO 4 Implement the cucumber methods onto the Junit
 //TODO 6 Make the site look nice with bootstrap
-//TODO 5 Add the rest of the LoginDAOImpl methods
 //TODO 1 Implement the DAO methods onto the site
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -57,13 +56,13 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("message", "Valid User");
 			out.println("Welcome : " +uname+", <br/>");
 			String status = loginDAO.getUserStatus(uname);
-			System.out.println("I'm going in");
+			//System.out.println("I'm going in");
 			if(status.equals("employee")) {
-				System.out.println("employee");
+				//System.out.println("employee");
 				RequestDispatcher dispatcher1 = request.getRequestDispatcher("EmployeeHome.jsp");
 				dispatcher1.include(request, response);
 			}else if(status.equals("manager")) {
-				System.out.println("manager");
+				//System.out.println("manager");
 				RequestDispatcher dispatcher2 = request.getRequestDispatcher("ManagerHome.jsp");
 				dispatcher2.include(request, response);
 			}

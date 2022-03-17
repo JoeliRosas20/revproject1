@@ -25,4 +25,5 @@ public interface LoginDAO {
 	public boolean updateInfo();
 	// HELPER
 	public String getUserStatus(String username);
+	public int getEmployeeId(String username);
 }

@@ -257,7 +257,6 @@ public class LoginDAOImpl implements LoginDAO{
 
 	@Override
 	public String getUserStatus(String username) {
-		System.out.println("Inside user status");
 		String status = " ";
 		PreparedStatement statement;
 		try {
@@ -270,6 +269,10 @@ public class LoginDAOImpl implements LoginDAO{
 			e.printStackTrace();
 		}
 		return status;
+	}
+	
+	public int getEmployeeId(String username) {
+		return 0;
 	}
 
 }
