@@ -18,7 +18,7 @@ public interface LoginDAO {
 	public List<User> getUsers();
 	public List<User> getUsersByUserName(String username);
 	// EMPLOYEE STUFF
-	public boolean submitARequest();
+	public boolean submitARequest(String request, int amount, int employeeId);
 	public List<Reimbursement> getPendingReimbursment(int employeeId);
 	public List<Reimbursement> getResolvedReimbursment(int employeeId);
 	public List<User> getInfo(String employeeName);

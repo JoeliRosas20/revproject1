@@ -65,8 +65,22 @@ public class LoginDAOImpl implements LoginDAO{
 	
 	//---------------Manager Stuff---------------
 	
-	public boolean submitARequest() {
-		return false;
+	public boolean submitARequest(String request, int amount, int employeeId) {
+		int rows = 0;
+		PreparedStatement stat;
+		try {
+			stat = connection.prepareStatement("insert into Reimbursement values(?,?,?,'pending', default)");
+			stat.setInt(1, employeeId);
+			stat.setInt(2, amount);
+			stat.setString(3, request);
+			rows = stat.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 	
 	public List<Reimbursement> getPendingReimbursment(){
