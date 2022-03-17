@@ -23,7 +23,9 @@ class LoginDAOImplTest {
 	String gender;
 	String status;
 	String qualification;
+	String reason;
 	int userId;
+	int amount;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -40,6 +42,9 @@ class LoginDAOImplTest {
 		gender = "male";
 		status = "employee";
 		qualification = "Graduate";
+		reason = "Transportation";
+		amount = 100;
+		userId = 1;
 		user = new User(-1, username, password, gender, status, qualification);
 	}
 
@@ -75,6 +80,13 @@ class LoginDAOImplTest {
 	void testGetUsersByUserName() {
 		List<User> users = loginDAO.getUsersByUserName(username);
 		assertNotEquals(0, users.size());
+	}
+	
+	//@Disabled
+	@Test
+	@DisplayName("Testing submitting request")
+	void testsubmitARequest() {
+		assertTrue(loginDAO.submitARequest(reason, amount, userId));
 	}
 	
 	//@Disabled
