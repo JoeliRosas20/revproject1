@@ -18,10 +18,11 @@ public interface LoginDAO {
 	public List<User> getUsers();
 	public List<User> getUsersByUserName(String username);
 	// EMPLOYEE STUFF
+	public boolean submitARequest();
 	public List<Reimbursement> getPendingReimbursment(int employeeId);
 	public List<Reimbursement> getResolvedReimbursment(int employeeId);
-	// Employee can see their info
-	// Employee can update their info
+	public List<User> getInfo(String employeeName);
+	public boolean updateInfo();
 	// HELPER
 	public String getUserStatus(String username);
 }

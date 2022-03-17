@@ -6,17 +6,19 @@ public class Reimbursement {
 	private int amount;
 	private String purpose;
 	private String status;
+	private int requestId;
 	
 	public Reimbursement() {
 		super();
 	}
 
-	public Reimbursement(int employeeId, int amount, String purpose, String status) {
+	public Reimbursement(int employeeId, int amount, String purpose, String status, int requestId) {
 		super();
 		this.employeeId = employeeId;
 		this.amount = amount;
 		this.purpose = purpose;
 		this.status = status;
+		this.requestId = requestId;
 	}
 
 	public int getEmployeeId() {
@@ -51,6 +53,14 @@ public class Reimbursement {
 		this.status = status;
 	}
 
+	public int getRequestId() {
+		return requestId;
+	}
+
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -58,6 +68,7 @@ public class Reimbursement {
 		result = prime * result + amount;
 		result = prime * result + employeeId;
 		result = prime * result + ((purpose == null) ? 0 : purpose.hashCode());
+		result = prime * result + requestId;
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
@@ -80,6 +91,8 @@ public class Reimbursement {
 				return false;
 		} else if (!purpose.equals(other.purpose))
 			return false;
+		if (requestId != other.requestId)
+			return false;
 		if (status == null) {
 			if (other.status != null)
 				return false;
@@ -91,7 +104,7 @@ public class Reimbursement {
 	@Override
 	public String toString() {
 		return "Reimbursement [employeeId=" + employeeId + ", amount=" + amount + ", purpose=" + purpose + ", status="
-				+ status + "]";
+				+ status + ", requestId=" + requestId + "]";
 	}
 
 }

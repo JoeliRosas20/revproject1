@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Hello World!</h1>
-<a href="login.html">Login</a>
+<a href="Login.html">Login</a>
 <br/>
 <a href="SignUp.html">Sign Up</a>
 </body>

@@ -73,7 +73,7 @@ public class LoginController extends HttpServlet {
 			dispatcher.include(request, response);
 			*/
 			out.println("<br/>");
-			out.println("<a href=login.html>Logout</a>");
+			out.println("<a href=Login.html>Logout</a>");
 		}
 		else {
 			out.println("That account does not exist. Go <a href=SignUp.html>Sign Up<a/>");

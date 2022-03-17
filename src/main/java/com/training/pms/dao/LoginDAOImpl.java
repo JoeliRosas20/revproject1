@@ -65,6 +65,10 @@ public class LoginDAOImpl implements LoginDAO{
 	
 	//---------------Manager Stuff---------------
 	
+	public boolean submitARequest() {
+		return false;
+	}
+	
 	public List<Reimbursement> getPendingReimbursment(){
 		List<Reimbursement> pending = new ArrayList<Reimbursement>();
 		Statement statement;
@@ -226,6 +230,15 @@ public class LoginDAOImpl implements LoginDAO{
 			e.printStackTrace();
 		}
 		return resolved;
+	}
+	
+	public List<User> getInfo(String employeeName){
+		List<User> userInfo = new ArrayList<User>();
+		return userInfo;
+	}
+	
+	public boolean updateInfo(){
+		return false;
 	}
 
 	@Override
