@@ -27,6 +27,7 @@ class LoginDAOImplTest {
 	String reason;
 	int userId;
 	int amount;
+	int employeeId;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -46,6 +47,7 @@ class LoginDAOImplTest {
 		reason = "Transportation";
 		amount = 100;
 		userId = 1;
+		employeeId = 1;
 		user = new User(-1, username, password, gender, status, qualification);
 	}
 
@@ -107,13 +109,12 @@ class LoginDAOImplTest {
 		assertEquals(employee, result);
 	}
 	
-	//@Disabled
+	@Disabled
 	@Test
 	@DisplayName("Testing getting Employee ID")
 	void testGetEmployeeId() {
-		int employee = 1;
 		int result = loginDAO.getEmployeeId(username);
-		assertEquals(employee, result);
+		assertEquals(employeeId, result);
 	}
 
 }
