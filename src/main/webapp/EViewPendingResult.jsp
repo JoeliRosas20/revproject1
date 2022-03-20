@@ -15,9 +15,9 @@
 <%
 	String username = (String)session.getAttribute("username");
 	LoginDAO loginDAO = new LoginDAOImpl();
-	List<Reimbursement> pending = new ArrayList<Reimbursement>();
-	
+	int employeeId = loginDAO.getEmployeeId(username);
+	List<Reimbursement> pending = loginDAO.getResolvedReimbursment(employeeId);
 %>
-<h1>Here is the table</h1>
+<h1>Here is the table <%=employeeId %> <%=username %></h1>
 </body>
 </html>

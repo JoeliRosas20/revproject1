@@ -272,7 +272,17 @@ public class LoginDAOImpl implements LoginDAO{
 	}
 	
 	public int getEmployeeId(String username) {
-		return 0;
+		PreparedStatement statement;
+		int employeeId = 0;
+		try {
+			statement = connection.prepareStatement("select userid from users where status = 'employee' and username = '"+username+"'");
+			ResultSet res = statement.executeQuery();
+			res.next();
+			employeeId = res.getInt(1);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return employeeId;
 	}
 
 }

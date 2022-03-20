@@ -90,7 +90,7 @@ class LoginDAOImplTest {
 		assertTrue(loginDAO.submitARequest(reason, amount, userId));
 	}
 
-	// @Disabled
+	@Disabled
 	@Test
 	@DisplayName("Testing getting Pending Reimbursement")
 	void testgetPendingReimbursment() {
@@ -104,6 +104,15 @@ class LoginDAOImplTest {
 	void testGetUserStatus() {
 		String employee = "employee";
 		String result = loginDAO.getUserStatus(username);
+		assertEquals(employee, result);
+	}
+	
+	//@Disabled
+	@Test
+	@DisplayName("Testing getting Employee ID")
+	void testGetEmployeeId() {
+		int employee = 1;
+		int result = loginDAO.getEmployeeId(username);
 		assertEquals(employee, result);
 	}
 
