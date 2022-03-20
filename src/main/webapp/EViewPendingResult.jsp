@@ -12,12 +12,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>View Pending Reimbursement</h1>
-	<h2>Enter your employee Id</h2>
-	<form action="EViewPendingResult.jsp">
-		Enter your Employee Id:
-		<input type="number" min="1" name="employeeId" id="employeeId" placeholder="please enter your Id">
-		<input type="submit" value="Search">
-	</form>
+<%
+	String username = (String)session.getAttribute("username");
+	LoginDAO loginDAO = new LoginDAOImpl();
+	List<Reimbursement> pending = new ArrayList<Reimbursement>();
+	
+%>
+<h1>Here is the table</h1>
 </body>
 </html>
