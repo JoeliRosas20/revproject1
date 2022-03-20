@@ -12,10 +12,11 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.project.model.Reimbursement;
 import com.project.model.User;
 
 class LoginDAOImplTest {
-	
+
 	LoginDAO loginDAO = new LoginDAOImpl();
 	User user;
 	String username;
@@ -51,29 +52,29 @@ class LoginDAOImplTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-	
+
 	@Disabled
 	@Test
 	@DisplayName("Testing register")
 	void testRegister() {
 		assertTrue(loginDAO.register(user));
 	}
-	
+
 	@Disabled
 	@Test
 	@DisplayName("Testing login")
 	void testValidate() {
 		assertTrue(loginDAO.validate(username, password));
 	}
-	
+
 	@Disabled
 	@Test
 	@DisplayName("Testing getting all the users")
 	void testGetUsers() {
 		List<User> users = loginDAO.getUsers();
-		assertNotEquals(0,users.size());
+		assertNotEquals(0, users.size());
 	}
-	
+
 	@Disabled
 	@Test
 	@DisplayName("Testing getting users by name")
@@ -81,15 +82,23 @@ class LoginDAOImplTest {
 		List<User> users = loginDAO.getUsersByUserName(username);
 		assertNotEquals(0, users.size());
 	}
-	
-	//@Disabled
+
+	@Disabled
 	@Test
 	@DisplayName("Testing submitting request")
 	void testsubmitARequest() {
 		assertTrue(loginDAO.submitARequest(reason, amount, userId));
 	}
-	
-	//@Disabled
+
+	// @Disabled
+	@Test
+	@DisplayName("Testing getting Pending Reimbursement")
+	void testgetPendingReimbursment() {
+		List<Reimbursement> pending = loginDAO.getPendingReimbursment(1);
+		assertNotEquals(0, pending.size());
+	}
+
+	@Disabled
 	@Test
 	@DisplayName("Testing getting users status")
 	void testGetUserStatus() {

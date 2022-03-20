@@ -88,7 +88,7 @@ public class LoginDAOImpl implements LoginDAO{
 		Statement statement;
 		try {
 			statement = connection.createStatement();
-			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending");
+			ResultSet res = statement.executeQuery("select * from reimbursement where status = pending");
 			while(res.next()) {
 				Reimbursement reimb = new Reimbursement();
 				reimb.setEmployeeId(0);
@@ -211,7 +211,7 @@ public class LoginDAOImpl implements LoginDAO{
 		Statement statement;
 		try {
 			statement = connection.createStatement();
-			ResultSet res = statement.executeQuery("select * from reimbursements where status = pending and employeeid="+employeeId);
+			ResultSet res = statement.executeQuery("select * from reimbursement where status = 'pending' and employeeid="+employeeId);
 			while(res.next()) {
 				Reimbursement reimb = new Reimbursement();
 				reimb.setEmployeeId(res.getInt(1));
