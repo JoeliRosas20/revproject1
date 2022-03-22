@@ -246,9 +246,23 @@ public class LoginDAOImpl implements LoginDAO{
 		return resolved;
 	}
 	
-	public List<User> getInfo(String employeeName){
-		List<User> userInfo = new ArrayList<User>();
-		return userInfo;
+	public User getInfo(String employeeName){
+		User user = new User();
+		PreparedStatement statement = null;
+		try {
+			statement = connection.prepareStatement("select * from users where username = '"+employeeName+"'");
+			ResultSet res = statement.executeQuery();
+			res.next();
+			user.setUserId(res.getInt(1));
+			user.setUsername(res.getString(2));
+			user.setPassword(res.getString(3));
+			user.setGender(res.getString(4));
+			user.setStatus(res.getString(5));
+			user.setQualification(res.getString(6));
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
 	}
 	
 	public boolean updateInfo(){

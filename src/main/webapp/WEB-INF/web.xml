@@ -40,6 +40,12 @@
   	<description></description>
   	<servlet-class>com.project.controller.ReimbursementTableController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<display-name>EmployeeController</display-name>
+  	<description></description>
+  	<servlet-class>com.project.controller.EmployeeController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>HomeController</servlet-name>
   	<url-pattern>/HomeController</url-pattern>
@@ -99,5 +105,13 @@
   <servlet-mapping>
   	<servlet-name>ReimbursementTableController</servlet-name>
   	<url-pattern>/Table</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<url-pattern>/EmployeeController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<url-pattern>/Employee</url-pattern>
   </servlet-mapping>
 </web-app>

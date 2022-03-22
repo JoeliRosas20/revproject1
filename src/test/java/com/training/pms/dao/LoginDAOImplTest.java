@@ -25,6 +25,7 @@ class LoginDAOImplTest {
 	String status;
 	String qualification;
 	String reason;
+	int def;
 	int userId;
 	int amount;
 	int employeeId;
@@ -45,10 +46,11 @@ class LoginDAOImplTest {
 		status = "employee";
 		qualification = "Graduate";
 		reason = "Transportation";
+		def = -1;
 		amount = 100;
 		userId = 1;
 		employeeId = 1;
-		user = new User(-1, username, password, gender, status, qualification);
+		user = new User(employeeId, username, password, gender, status, qualification);
 	}
 
 	@AfterEach
@@ -98,6 +100,13 @@ class LoginDAOImplTest {
 	void testgetPendingReimbursment() {
 		List<Reimbursement> pending = loginDAO.getPendingReimbursment(1);
 		assertNotEquals(0, pending.size());
+	}
+	
+	//@Disabled
+	@Test
+	@DisplayName("Testing getting info")
+	void testgetInfo() {
+		assertEquals(user, loginDAO.getInfo(username));
 	}
 
 	@Disabled

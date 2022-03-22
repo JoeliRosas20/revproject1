@@ -21,7 +21,7 @@ public interface LoginDAO {
 	public boolean submitARequest(String request, int amount, int employeeId);
 	public List<Reimbursement> getPendingReimbursment(int employeeId);
 	public List<Reimbursement> getResolvedReimbursment(int employeeId);
-	public List<User> getInfo(String employeeName);
+	public User getInfo(String employeeName);
 	public boolean updateInfo();
 	// HELPER
 	public String getUserStatus(String username);
