@@ -11,7 +11,7 @@
 <body>
 	<h1>Submit a Reimbursement Request</h1>
 	<form class="form-style"
-	action="EmployeeController"
+	action="ESubmitReimbReqResult.jsp"
 	method="get"
 	name="requestForm">
 		<h2>Please state the reason for this reimbursement</h2>
@@ -20,8 +20,6 @@
 		<h2>Please state the amount you want for this reimbursement</h2>
 		<input type="number" min="1" size="31" name="amount" id="amount"
 			placeholder="please enter amount">
-		<h2>Please enter your employeeID</h2>
-		<input type="number" name="employeeId" id="employeeId"> 
 		<input type="submit" value="Submit" id="submit">
 	</form>
 </body>

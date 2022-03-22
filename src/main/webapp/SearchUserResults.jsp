@@ -12,12 +12,13 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<% String username = (String)session.getAttribute("username"); %>
+<% String username = (String)session.getAttribute("username"); 
+   String searchname = request.getParameter("searchname");%>
 <h2>You are logged in as : <%= username %> and the message is : <%= session.getAttribute("message") %></h2>
 <body>
 <%
 	LoginDAO loginDAO = new LoginDAOImpl();
-	List<User> users = loginDAO.getUsersByUserName(username);
+	List<User> users = loginDAO.getUsersByUserName(searchname);
 	Iterator<User> iterator = users.iterator();
 %>
 <h1>List of all the users</h1>

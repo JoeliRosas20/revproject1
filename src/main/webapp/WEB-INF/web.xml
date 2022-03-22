@@ -5,12 +5,6 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>HomeController</servlet-name>
-  	<display-name>HomeController</display-name>
-  	<description></description>
-  	<servlet-class>com.training.controller.HomeController</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>SignUpController</servlet-name>
   	<display-name>SignUpController</display-name>
   	<description></description>
@@ -22,26 +16,6 @@
   	<description></description>
   	<servlet-class>com.project.controller.LoginController</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>ManagerController</servlet-name>
-  	<display-name>ManagerController</display-name>
-  	<description></description>
-  	<servlet-class>com.project.controller.ManagerController</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>EmployeeController</servlet-name>
-  	<display-name>EmployeeController</display-name>
-  	<description></description>
-  	<servlet-class>com.project.controller.EmployeeController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>HomeController</servlet-name>
-  	<url-pattern>/HomeController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>HomeController</servlet-name>
-  	<url-pattern>/Home</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>SignUpController</servlet-name>
   	<url-pattern>/SignUpController</url-pattern>
@@ -57,21 +31,5 @@
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/Login</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ManagerController</servlet-name>
-  	<url-pattern>/ManagerController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ManagerController</servlet-name>
-  	<url-pattern>/Manager</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>EmployeeController</servlet-name>
-  	<url-pattern>/EmployeeController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>EmployeeController</servlet-name>
-  	<url-pattern>/Employee</url-pattern>
   </servlet-mapping>
 </web-app>
