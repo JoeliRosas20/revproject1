@@ -22,8 +22,9 @@ public interface LoginDAO {
 	public List<Reimbursement> getPendingReimbursment(int employeeId);
 	public List<Reimbursement> getResolvedReimbursment(int employeeId);
 	public User getInfo(String employeeName);
-	public boolean updateInfo();
+	public boolean updateInfo(String employeeName, String qualification);
 	// HELPER
 	public String getUserStatus(String username);
 	public int getEmployeeId(String username);
+	//Erase the old qualification to put in new onw
 }

@@ -94,7 +94,8 @@ public class LoginDAOImpl implements LoginDAO{
 				reimb.setEmployeeId(res.getInt(1));
 				reimb.setAmount(res.getInt(2));
 				reimb.setPurpose(res.getString(3));
-				reimb.setPurpose(res.getString(4));
+				reimb.setStatus(res.getString(4));
+				reimb.setRequestId(res.getInt(5));
 				pending.add(reimb);
 			}
 		}catch(SQLException e) {
@@ -265,8 +266,20 @@ public class LoginDAOImpl implements LoginDAO{
 		return user;
 	}
 	
-	public boolean updateInfo(){
-		return false;
+	public boolean updateInfo(String employeeName, String qualification){
+		int rows = 0;
+		PreparedStatement statement;
+		try {
+			statement = connection.prepareStatement("update user set status = ?");
+			statement.setString(1, qualification);
+			rows = statement.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		if(rows == 0)
+			return false;
+		else
+			return true;
 	}
 
 	@Override
