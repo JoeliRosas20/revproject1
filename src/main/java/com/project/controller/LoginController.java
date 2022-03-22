@@ -16,12 +16,11 @@ import com.training.pms.dao.LoginDAOImpl;
 /**
  * Servlet implementation class LoginController
  */
-//TODO 2 Fill out the rest of the JSP pages
-//TODO 3 Test out the LoginDAOImpl methods
-//TODO 4 Add more cucumber files for reimbursements from both ends
-//TODO 5 Implement the cucumber methods onto the Junit
-//TODO 6 Make the site look nice with bootstrap
-//TODO 1 Implement the DAO methods onto the controllers
+//TODO 2 Test out the LoginDAOImpl methods
+//TODO 3 Add more cucumber files for reimbursements from both ends
+//TODO 4 Implement the cucumber methods onto the Junit
+//TODO 5 Make the site look nice with bootstrap
+//TODO 1 Edit Employee view resolved and update Info, Manager view employee reimbursement request
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
