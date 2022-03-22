@@ -9,10 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	LoginDAO loginDAO = new LoginDAOImpl();
-	Boolean sumbitted;
-	%>
 	<h1>Submit a Reimbursement Request</h1>
 	<form class="form-style"
 	action="EmployeeController"
@@ -23,8 +19,10 @@
 			placeholder="please enter reason">
 		<h2>Please state the amount you want for this reimbursement</h2>
 		<input type="number" min="1" size="31" name="amount" id="amount"
-			placeholder="please enter amount"> <input type="submit"
-			value="Submit" id="submit">
+			placeholder="please enter amount">
+		<h2>Please enter your employeeID</h2>
+		<input type="number" name="employeeId" id="employeeId"> 
+		<input type="submit" value="Submit" id="submit">
 	</form>
 </body>
 </html>
