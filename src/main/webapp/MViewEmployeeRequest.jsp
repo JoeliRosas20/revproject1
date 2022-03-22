@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import = "com.training.pms.dao.LoginDAO" %>
-<%@ page import = "com.training.pms.dao.LoginDAOImpl" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="com.training.pms.dao.LoginDAO"%>
+<%@ page import="com.training.pms.dao.LoginDAOImpl"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	LoginDAO loginDAO = new LoginDAOImpl();
-%>
-<h1>View an Employee Request</h1>
+	<h1>View an Employee Request</h1>
+	<form action="SearchUserResults.jsp">
+		Enter Username to search : <input type="text" name="searchname">
+		<input type="submit" value="Search">
+	</form>
 </body>
 </html>

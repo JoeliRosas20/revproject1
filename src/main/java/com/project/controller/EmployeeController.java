@@ -6,11 +6,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.training.pms.dao.LoginDAO;
+import com.training.pms.dao.LoginDAOImpl;
+
 /**
  * Servlet implementation class EmployeeController
  */
 public class EmployeeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	LoginDAO loginDAO = new LoginDAOImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -24,6 +28,14 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String reason = request.getParameter("reason");
+		String amount = request.getParameter("amount");
+		System.out.println("Reason is "+reason);
+		System.out.println("Reason is "+amount);
+		if(!reason.isEmpty() && !amount.isEmpty()) {
+			System.out.println("True");
+		}
+		
 	}
 
 	/**
@@ -33,8 +45,9 @@ public class EmployeeController extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	public void submitRequest() {
-		
+	public void submitRequest(String reason, String amount) {
+		int money = Integer.parseInt(amount);
+		loginDAO.submitARequest(reason, money, 0);
 	}
 	
 	public void updateInfo() {

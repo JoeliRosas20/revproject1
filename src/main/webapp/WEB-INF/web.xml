@@ -23,10 +23,10 @@
   	<servlet-class>com.project.controller.LoginController</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ReimbursementTableController</servlet-name>
-  	<display-name>ReimbursementTableController</display-name>
+  	<servlet-name>ManagerController</servlet-name>
+  	<display-name>ManagerController</display-name>
   	<description></description>
-  	<servlet-class>com.project.controller.ReimbursementTableController</servlet-class>
+  	<servlet-class>com.project.controller.ManagerController</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>EmployeeController</servlet-name>
@@ -59,16 +59,12 @@
   	<url-pattern>/Login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ReimbursementTableController</servlet-name>
-  	<url-pattern>/ReimbursementTableController</url-pattern>
+  	<servlet-name>ManagerController</servlet-name>
+  	<url-pattern>/ManagerController</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ReimbursementTableController</servlet-name>
-  	<url-pattern>/Reimbursement</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ReimbursementTableController</servlet-name>
-  	<url-pattern>/Table</url-pattern>
+  	<servlet-name>ManagerController</servlet-name>
+  	<url-pattern>/Manager</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>EmployeeController</servlet-name>

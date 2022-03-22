@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ReimbursementTableController
  */
-public class ReimbursementTableController extends HttpServlet {
+public class ManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReimbursementTableController() {
+    public ManagerController() {
         super();
     }
 
@@ -32,12 +32,15 @@ public class ReimbursementTableController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
-		out.println("<html><body>");
-		String employeeId = request.getParameter("employeeId");
-		String managerId = request.getParameter("managerId");
+		
+	}
+	
+	public void resolveRequest() {
+		
+	}
+	
+	public void getEmployeeInfo() {
+		
 	}
 
 }

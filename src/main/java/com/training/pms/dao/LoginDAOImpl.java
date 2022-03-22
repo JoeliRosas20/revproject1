@@ -91,10 +91,10 @@ public class LoginDAOImpl implements LoginDAO{
 			ResultSet res = statement.executeQuery("select * from reimbursement where status = 'pending'");
 			while(res.next()) {
 				Reimbursement reimb = new Reimbursement();
-				reimb.setEmployeeId(0);
-				reimb.setAmount(0);
-				reimb.setPurpose(null);
-				reimb.setPurpose(null);
+				reimb.setEmployeeId(res.getInt(1));
+				reimb.setAmount(res.getInt(2));
+				reimb.setPurpose(res.getString(3));
+				reimb.setPurpose(res.getString(4));
 				pending.add(reimb);
 			}
 		}catch(SQLException e) {
@@ -108,13 +108,13 @@ public class LoginDAOImpl implements LoginDAO{
 		Statement statement;
 		try {
 			statement = connection.createStatement();
-			ResultSet res = statement.executeQuery("select * from reimbursements where status = resolved");
+			ResultSet res = statement.executeQuery("select * from reimbursements where status = 'resolved'");
 			while(res.next()) {
 				Reimbursement reimb = new Reimbursement();
-				reimb.setEmployeeId(0);
-				reimb.setAmount(0);
-				reimb.setPurpose(null);
-				reimb.setStatus(null);
+				reimb.setEmployeeId(res.getInt(1));
+				reimb.setAmount(res.getInt(2));
+				reimb.setPurpose(res.getString(3));
+				reimb.setPurpose(res.getString(4));
 				resolved.add(reimb);
 			}
 		}catch(SQLException e) {
