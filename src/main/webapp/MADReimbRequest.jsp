@@ -9,9 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	LoginDAO loginDAO = new LoginDAOImpl();
-%>
 <h1>Approve/Deny Reimbursement Request</h1>
 </body>
 </html>
