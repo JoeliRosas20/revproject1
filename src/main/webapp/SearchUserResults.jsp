@@ -1,5 +1,5 @@
 <%@page import="java.util.Iterator"%>
-<%@page import="com.project.model.User"%>
+<%@page import="com.project.model.Reimbursement"%>
 <%@page import="java.util.List"%>
 <%@page import="com.training.pms.dao.LoginDAOImpl"%>
 <%@page import="com.training.pms.dao.LoginDAO"%>
@@ -18,28 +18,27 @@
 <body>
 <%
 	LoginDAO loginDAO = new LoginDAOImpl();
-	List<User> users = loginDAO.getUsersByUserName(searchname);
-	Iterator<User> iterator = users.iterator();
+	int searchId = loginDAO.getEmployeeId(searchname);
+	List<Reimbursement> users = loginDAO.getReimbursementByUserName(searchId);
+	Iterator<Reimbursement> iterator = users.iterator();
 %>
 <h1>List of all the users</h1>
 <table border="2" cellspacing="10" cellpadding="10" class="table table-dark">
-	<th>User Id</th>
-	<th>User Name</th>
-	<th>Password</th>
-	<th>Gender</th>
+	<th>Employee Id</th>
+	<th>Amount</th>
+	<th>Purpose</th>
 	<th>Status</th>
-	<th>Qualification</th>
+	<th>Request Id</th>
 <% 
 	while(iterator.hasNext()){
-		User user = iterator.next();
+		Reimbursement user = iterator.next();
 %>
 	<tr>
-		<td><%= user.getUserId() %></td>
-		<td><%= user.getUsername() %></td>
-		<td><%= user.getPassword() %></td>
-		<td><%= user.getGender() %></td>
+		<td><%= user.getEmployeeId() %></td>
+		<td><%= user.getAmount() %></td>
+		<td><%= user.getPurpose() %></td>
 		<td><%= user.getStatus() %></td>
-		<td><%= user.getQualification() %></td>
+		<td><%= user.getRequestId() %></td>
 	</tr>
 <% 
 	}

@@ -180,24 +180,21 @@ public class LoginDAOImpl implements LoginDAO{
 	}
 
 	@Override
-	public List<User> getUsersByUserName(String username) {
+	public List<Reimbursement> getReimbursementByUserName(int username) {
 		System.out.println("##Printing search users  ");
-		List<User> users = new ArrayList<User>();
-
+		List<Reimbursement> users = new ArrayList<Reimbursement>();
 		Statement stat;
 		try {
 			stat = connection.createStatement();
-			ResultSet res = stat.executeQuery("select * from users where username = '"+username+"'");
+			ResultSet res = stat.executeQuery("select * from reimbursement where employeeId = '"+username+"'");
 			while (res.next()) {
-				User user = new User();
-				user.setUserId(res.getInt(1));
-				user.setUsername(res.getString(2));
-				user.setPassword(res.getString(3));
-				user.setGender(res.getString(4));
-				user.setStatus(res.getString(5));
-				user.setQualification(res.getString(6));
+				Reimbursement user = new Reimbursement();
+				user.setEmployeeId(res.getInt(1));
+				user.setAmount(res.getInt(2));
+				user.setPurpose(res.getString(3));
+				user.setStatus(res.getString(4));
+				user.setRequestId(res.getInt(5));
 				users.add(user);
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

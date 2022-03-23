@@ -16,7 +16,7 @@ public interface LoginDAO {
 	public boolean acceptRequest(int requestId);
 	public boolean denyRequest(int requestId);
 	public List<User> getUsers();
-	public List<User> getUsersByUserName(String username);
+	public List<Reimbursement> getReimbursementByUserName(int username);
 	// EMPLOYEE STUFF
 	public boolean submitARequest(String request, int amount, int employeeId);
 	public List<Reimbursement> getPendingReimbursment(int employeeId);
