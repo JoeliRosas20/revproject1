@@ -9,7 +9,7 @@ public class LoginPageFactory {
 	
 WebDriver driver;
 	
-	@FindBy(id = "name")
+	@FindBy(id = "username")
 	WebElement txt_username;
 	
 	@FindBy(id = "password")

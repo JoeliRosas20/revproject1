@@ -44,7 +44,7 @@ class ERSTest {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
-		username = "Raymond";
+		username = "Chris";
 		password = "12345678";
 	}
 
