@@ -20,7 +20,7 @@ import com.training.pms.dao.LoginDAOImpl;
 //TODO 3 Add more cucumber files for reimbursements from both ends
 //TODO 4 Implement the cucumber methods onto the Junit
 //TODO 5 Make the site look nice with bootstrap
-//TODO 1 Edit Employee view update Info, Manager view employee reimbursement request
+//TODO 1 Edit Employee view update Info
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

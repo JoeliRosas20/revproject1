@@ -11,13 +11,9 @@
 </head>
 <body>
 <h1>Update Info</h1>
-<form class="form-style" action="EmployeeController" method="get" name="updateInfo">
-	<table border="2" cellspacing="10" cellpadding="10">
+<form class="form-style" action="EUpdateInfoResult.jsp" name="updateInfo">
+	<table border="2" cellspacing="10" cellpadding="10" >
 		<tbody>
-			<tr>
-				<td><label>Username</label></td>
-				<td><input type="text" name="newUsername"></td>
-			</tr>
 			<tr>
 				<td><label>Qualification</label></td>
 				<td><select name="qualification" id="qualification">
@@ -26,6 +22,9 @@
 						<option>PostGraduate</option>
 						<option>Masters</option>
 				</select></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Update" id="submit"></td>
 			</tr>
 		</tbody>
 	</table>

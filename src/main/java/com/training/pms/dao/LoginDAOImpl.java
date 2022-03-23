@@ -267,8 +267,9 @@ public class LoginDAOImpl implements LoginDAO{
 		int rows = 0;
 		PreparedStatement statement;
 		try {
-			statement = connection.prepareStatement("update user set status = ?");
+			statement = connection.prepareStatement("update users set qualification = ? where username = ?");
 			statement.setString(1, qualification);
+			statement.setString(2, employeeName);
 			rows = statement.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -26,5 +26,5 @@ public interface LoginDAO {
 	// HELPER
 	public String getUserStatus(String username);
 	public int getEmployeeId(String username);
-	//Erase the old qualification to put in new onw
+
 }
