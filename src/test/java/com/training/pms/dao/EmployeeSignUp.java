@@ -15,6 +15,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.project.pages.LoginPageFactory;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,6 +26,7 @@ class EmployeeSignUp {
 	
 	static String browserName = "chrome";
 	static WebDriver driver;
+	LoginPageFactory loginPage;
 	String username;
 	String password;
 
@@ -37,16 +40,7 @@ class EmployeeSignUp {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		if (browserName.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		}
+		
 		username = "Raymond";
 		password = "12345678";
 	}
@@ -57,7 +51,16 @@ class EmployeeSignUp {
 	
 	@Given("A new tab is open")
 	public void a_new_tab_is_open() {
-	    // Write code here that turns the phrase above into concrete actions
+		if (browserName.equals("edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		} else if (browserName.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (browserName.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
 	    throw new io.cucumber.java.PendingException();
 	}
 
