@@ -21,7 +21,6 @@ public class LoginDAOImpl implements LoginDAO{
 
 	//---------------User Stuff---------------
 	
-	@Override
 	public boolean register(User user) {
 		System.out.println("Registration");
 		PreparedStatement statement = null;
@@ -46,7 +45,6 @@ public class LoginDAOImpl implements LoginDAO{
 			return true;
 	}
 
-	@Override
 	public boolean validate(String username, String password) {
 		boolean userValid = false;
 		PreparedStatement stat;
@@ -156,9 +154,8 @@ public class LoginDAOImpl implements LoginDAO{
 			return true;
 	}
 
-	@Override
 	public List<User> getUsers() {
-		List<User> users = new ArrayList<>();
+		List<User> users = new ArrayList<User>();
 		Statement stat;
 		try {
 			stat = connection.createStatement();
@@ -179,7 +176,6 @@ public class LoginDAOImpl implements LoginDAO{
 		return users;
 	}
 
-	@Override
 	public List<Reimbursement> getReimbursementByUserName(int username) {
 		System.out.println("##Printing search users  ");
 		List<Reimbursement> users = new ArrayList<Reimbursement>();
@@ -280,7 +276,6 @@ public class LoginDAOImpl implements LoginDAO{
 			return true;
 	}
 
-	@Override
 	public String getUserStatus(String username) {
 		String status = " ";
 		PreparedStatement statement;
