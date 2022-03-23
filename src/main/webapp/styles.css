@@ -1,12 +1,8 @@
 h1{
 	text-align: center;
-	background-color: yellow;
-	color: red;
+	background-color:blue;
+	color:#000000;
 	font-family: cursive;
-}
-
-body{
-	background-image: url("bread.jpg");
 }
 
 p{

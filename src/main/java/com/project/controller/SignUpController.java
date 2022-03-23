@@ -40,7 +40,7 @@ public class SignUpController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		out.println("<html>");
-		out.println("<body bgcolor=pink>");
+		out.println("<body>");
 		out.println("<h1>Hello and welcome to my website</h1>");
 		out.println(user);
 		out.println("</body></html>");
