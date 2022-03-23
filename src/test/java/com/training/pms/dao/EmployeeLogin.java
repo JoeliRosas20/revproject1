@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class EmployeeLogin {
 	
-	static String browserName = "chrome";
+	static String browserName = "firefox";
 	static WebDriver driver;
 	LoginPageFactory loginPage;
 

@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>Update Info</h1>
+<h3><a href="Login.html">Home</a></h3>
 <form class="form-style" action="EUpdateInfoResult.jsp" name="updateInfo">
 	<table border="2" cellspacing="10" cellpadding="10" >
 		<tbody>

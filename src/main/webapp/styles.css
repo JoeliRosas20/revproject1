@@ -1,7 +1,7 @@
 h1{
 	text-align: center;
 	background-color:blue;
-	color:#000000;
+	color: white;
 	font-family: cursive;
 }
 
@@ -11,6 +11,10 @@ p{
 
 hr{
 	color: green;
+}
+
+body{
+	background-image: url("Background.jpg");
 }
 
 .myclass {

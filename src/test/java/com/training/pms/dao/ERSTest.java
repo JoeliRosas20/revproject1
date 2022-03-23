@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 class ERSTest {
 	
-	static String browserName = "chrome";
+	static String browserName = "firefox";
 	static WebDriver driver;
 	String username;
 	String password;

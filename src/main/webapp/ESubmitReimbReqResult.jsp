@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3><a href="Login.html">Home</a></h3>
 <%
 	String username = (String)session.getAttribute("username");
 	String reason = request.getParameter("reason");

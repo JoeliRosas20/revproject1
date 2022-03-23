@@ -12,6 +12,7 @@
 </head>
 <body>
 	<h1>Submit a Reimbursement Request</h1>
+	<h3><a href="Login.html">Home</a></h3>
 	<form class="form-style"
 	action="ESubmitReimbReqResult.jsp"
 	name="requestForm">

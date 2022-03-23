@@ -20,10 +20,6 @@
 
 		var qual = document.signupform.qualification.options.selectedIndex;
 
-		/* 		var radio1 = document.getElementById('radio1').checked;
-		 var radio2 = document.getElementById('radio2').checked;
-		 var radio3 = document.getElementById('radio3').checked; */
-
 		var radio = new Array();
 		for (i = 3; i <= 5; i++) {
 			radio[i] = document.forms[0].elements[i].checked
@@ -65,12 +61,13 @@
 	}
 </script>
 <body>
+<h1>Sign Up Page</h1>
 	<form class="form-style" 
 	action="SignUpController"
 	method="get"
 	onsubmit="return validateSignUpForm()" 
 	name="signupform">
-		<table cellspacing="20" cellpadding="20" bgcolor="cyan">
+		<table cellspacing="20" cellpadding="20">
 			<tr>
 				<td><label>* Username: </label></td>
 				<td><input type="text" name="username" id="username"></td>
@@ -107,15 +104,7 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td><span id="marriedButton"> 
-				<input type="button"
-						value="Married ?" onClick="addInput()">
-				</span></td>
-				<td><div id="myDiv1"></div></td>
-			</tr>
-			<tr>
 				<td><input type="submit" value="SignUp" id="signup"></td>
-				<td><input type="reset" value="Clear"></td>
 			</tr>
 
 		</table>

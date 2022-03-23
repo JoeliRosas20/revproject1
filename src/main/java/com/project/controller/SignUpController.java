@@ -43,6 +43,7 @@ public class SignUpController extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1>Hello and welcome to my website</h1>");
 		out.println(user);
+		out.println("<h3><a href=\"Login.html\">Login</a></h3>");
 		out.println("</body></html>");
 	}
 

@@ -142,7 +142,7 @@ public class LoginDAOImpl implements LoginDAO{
 		PreparedStatement statement = null;
 		int rows = 0;
 		try {
-			statement = connection.prepareStatement("update Reimbursement set status = 'denied' where requestid = ?");
+			statement = connection.prepareStatement("delete from Reimbursement where requestid = ?");
 			statement.setInt(1, requestId);
 			rows = statement.executeUpdate();
 		}catch(SQLException e) {

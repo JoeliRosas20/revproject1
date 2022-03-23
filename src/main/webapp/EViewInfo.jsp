@@ -19,6 +19,7 @@ User user = new User();
 user = loginDAO.getInfo(username);
 %>
 <h1>View Info</h1>
+<h3><a href="Login.html">Home</a></h3>
 <table border="2" cellspacing="10" cellpadding="10" class="table table-dark">
 	<thead>
 		<tr>
